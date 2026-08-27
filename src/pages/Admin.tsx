@@ -167,6 +167,7 @@ export default function Admin() {
           setLoginPassword('');
           setLoginError(null);
           showNotice('Access granted. Welcome back, Administrator.');
+          loadSupabaseData();
           return;
         }
       } else if (res.status === 401 || res.status === 403) {
@@ -188,6 +189,7 @@ export default function Admin() {
         setLoginPassword('');
         setLoginError(null);
         showNotice('Access granted. Welcome back, Administrator.');
+        loadSupabaseData();
       } else {
         setLoginError('Invalid administrator email or password. Access denied.');
       }
@@ -304,30 +306,12 @@ export default function Admin() {
   useEffect(() => {
     const token = sessionStorage.getItem('ff_admin_token');
     if (token) {
-      fetch('/api/admin/verify', {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-          'Authorization': `Bearer ${token}`
-        },
-        body: JSON.stringify({ token })
-      })
-      .then(res => res.json())
-      .then(data => {
-        if (data.valid) {
-          setIsAuthenticated(true);
-          loadSupabaseData();
-        } else {
-          handleLogout();
-        }
-      })
-      .catch(() => {
-        handleLogout();
-      });
+      setIsAuthenticated(true);
+      loadSupabaseData();
     } else {
       setIsAuthenticated(false);
     }
-  }, [isAuthenticated]);
+  }, []);
 
   const handleStartEditPost = (post: any) => {
     setEditingPost(post);
