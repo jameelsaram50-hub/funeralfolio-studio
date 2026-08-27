@@ -1,0 +1,16 @@
+{
+  "name": "FuneralFolio | Memorial Document Creation Platform",
+  "short_name": "FuneralFolio",
+  "icons": [
+    {
+      "src": "/favicon.png",
+      "sizes": "192x192",
+      "type": "image/png"
+    }
+  ],
+  "theme_color": "#2c1810",
+  "background_color": "#fdfaf7",
+  "display": "standalone",
+  "start_url": "/",
+  "orientation": "portrait"
+}

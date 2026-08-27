@@ -1,0 +1,178 @@
+================================================================================
+                    MOBILE PRODUCT REQUIREMENT DOCUMENT (PRD)
+                   PROJECT NAME: MEMORIAL LEGACY SUITE (MOBILE)
+================================================================================
+Document Version: 1.0.0
+Author: Google AI Studio Coding Assistant
+Status: Draft / Ready for Development Setup
+Created: May 21, 2026
+
+--------------------------------------------------------------------------------
+URDU EXPLANATION / INTRODUCTION (مختصر تعارف)
+--------------------------------------------------------------------------------
+Dost, is PRD main hum nay aap ki web app ko mukammal mobile app (Android & iOS) 
+main convert karnay ka poora plan likha hai. Web app React/TypeScript par 
+mabni hai, is liye hum nay React Native (Expo) ko recommend kiya hai takay aap 
+ka mojooda code aur helper logic (AI prompt writing, calculations, themes) 
+maximum reuse ho sakay. 
+
+Is document main hum nay mobile editor gestures, offline support, Direct 
+Printing, aur AI Image enhancement features ko details se shaamil kiya hai. 
+Aap is file ko apnay developers ko de saktay hain ya apnay pass roadmap k 
+liye mehfooz rakh saktay hain.
+
+================================================================================
+1. EXECUTIVE SUMMARY & VALUE PROPOSITION
+================================================================================
+The "Memorial Legacy Suite" mobile application is a graceful, offline-first companion 
+designed to assist grieving families in creating dignified memorial stationery 
+(Programs, Tribute Posters, Prayer Cards, and Invitation Cards) and coordinating 
+services right from their smartphones. 
+
+By transitioning from web to mobile, the app leverages on-device capabilities such 
+as camera-based photo scanning, push notifications for RSVPs, offline-first state management 
+(essential inside remote funeral homes or places of worship with weak cellular signals), 
+and direct mobile printing (AirPrint / Google Cloud Print).
+
+--------------------------------------------------------------------------------
+2. ARCHITECTURE & TECHNOLOGY STACK EVALUATION
+--------------------------------------------------------------------------------
+To leverage the existing React (TS) codebase effectively, we evaluate the following 
+cross-platform stack:
+
+* Core Framework: React Native with Expo (SDK 51+)
+  - Why: Reuses ~80% of business logic, context state, and Gemini API request architecture.
+  - Native UI: React Native Paper / Tailwind (via nativewind) for styling.
+  - State Management: React Context (reused from MemorialContext.ts) paired with 
+    Redux Toolkit or Zustand + AsyncStorage / MMKV for robust local persistence.
+* AI Integration: Node.js/Express Backend (or Serverless Edge functions) wrapping 
+  the Google Gen AI SDK (@google/genai) securely with Gemini 2.5 Flash for rapid 
+  obituary drafting.
+* Build Tooling: Expo Application Services (EAS) for seamless Android (.apk / .aab) 
+  and iOS App Store deployment.
+
+================================================================================
+3. SYSTEM ARCHITECTURE & CODEBASE MAPPING
+================================================================================
+Below is how the existing React Web pages map directly into React Native screens.
+
+Web Route                     Mobile Stack Screen             Native Navigation Component
+--------------------------------------------------------------------------------
+/                             HomeScreen                      TabNavigator -> Home Tab
+/start-quiz                   QuizScreen                      Stacked Screen (Wizard Layout)
+/funeral-programs             ProgramsGalleryScreen           TabNavigator -> Templates
+/posters                      PostersGalleryScreen            TabNavigator -> Templates
+/prayer-cards                 PrayerCardsGalleryScreen        TabNavigator -> Templates
+/funeral-invitations          InvitationsGalleryScreen        TabNavigator -> Templates
+/thank-you-cards              ThankYouGalleryScreen           TabNavigator -> Templates
+/obituary-writer              ObituaryWriterScreen            Stacked Screen with AI Draft Chat overlay
+/editor                       SuiteEditorScreen (Dynamic)    Stacked Full-Screen interactive Canvas
+/memorial-page                DigitalMemorialScreen           Deep-linked Web-View / Core App Viewer
+/checkout                     CheckoutScreen                  Apple Pay / Google Pay SDK Integration
+/success                      SuccessScreen                   Stacked Archive Success Screen
+
+================================================================================
+4. KEY FUNCTIONAL MODULES & MOBILE-SPECIFIC ENHANCEMENTS
+================================================================================
+
+--------------------------------------------------------------------------------
+4.1 PROGRESSIVE MEMORIAL QUIZ (Tailored Wizard)
+--------------------------------------------------------------------------------
+* Context: Instead of lengthy forms, a beautiful wizard prompts questions step-by-step.
+* Mobile Interaction:
+  - Swipe-to-advance and swipe-back gestures.
+  - Micro-animations for selections (using framer-motion-react-native or react-native-reanimated).
+  - Progressive top-bar loader showing 0% to 100% completion.
+  - Saved-state: Automatically saves progress locally so if the app exits, the user can resume.
+
+--------------------------------------------------------------------------------
+4.2 ON-DEVICE OLD PHOTO SCANNER & AI ENHANCER
+--------------------------------------------------------------------------------
+* Core Problem: Most old family photos of deceased loved ones are physical copies.
+* Mobile Solution:
+  - Integrate Edge-detection Camera (react-native-vision-camera or expo-camera).
+  - Automatically crop physical photos, adjust perspective, and correct lighting.
+  - Send cropped image to a lightweight background-removal service or use on-device ML 
+    (CoreML/MLKit) to isolate the face of the deceased for templates.
+  - Provide a slideable "Before/After" preview overlay.
+
+--------------------------------------------------------------------------------
+4.3 MOBILE TOUCH-FIRST SUITE EDITOR (Canvas Area)
+--------------------------------------------------------------------------------
+* Mobile Adaptations:
+  - Web canvases are replaced with a scale-to-fit mobile layout.
+  - Gestures: Double-tap to edit text layer, Pinch-to-zoom to view fine print, 
+    Drag-and-Drop layers using Reanimated's Gesture Handler.
+  - Bottom Sheet Editor: Instantly slide up a clean control panel (using @gorhom/bottom-sheet) 
+    containing font sizes, alignments, text boxes, and asset switchers.
+
+--------------------------------------------------------------------------------
+4.4 NATIVE AIRPRINT & MOPRIA INTEGRATION (Instant Keepsakes)
+--------------------------------------------------------------------------------
+* Seamless Printing:
+  - Real-time high-resolution PDF rendering using the native `expo-print` API.
+  - Support standard page sizes directly in-app: US Letter (Bi-Fold/Tri-Fold programs), 
+    Large Poster formats, and 2.5"x4.25" Prayer card margins.
+  - Direct connection to local Wi-Fi Home or Funeral Home Printers.
+
+--------------------------------------------------------------------------------
+4.5 OFFLINE PRESURSERVATION & SYNC
+--------------------------------------------------------------------------------
+* Reliable Cache:
+  - Grieving families coordinates services on the go, often in basements or churches with 
+    poor connectivity.
+  - Fully functional SQLite / WatermelonDB local sync layer.
+  - Files are compressed and cached locally. Once a network is found, they are securely synced 
+    to the cloud and the preservation folder is archived.
+
+================================================================================
+5. USER EXPERIENCE (UX) & BRAND VISUAL IDENTITY
+================================================================================
+* Mood Direction: Warm Slate, Calm Ivory, Serene Sand, and Soft Bronze accents.
+  The design must project security, empathy, and absolute digital cleanliness.
+* Typography:
+  - Display/Heading font: Google Fonts Playfair Display (imported dynamically using 
+    @expo-google-fonts/playfair-display with a fallback to local serif).
+  - Body Text: Inter Font Face (via @expo-google-fonts/inter) for dense legibility on small devices.
+* Dark Mode & Night Vigil Theme:
+  - Mourning families often configure details late at night with heavy exhaustion.
+  - Fully high-contrast Dark Mode must be readily selectable or default via system environment.
+
+================================================================================
+6. SECURITY, STABILITY & ACCESS CONTROL
+================================================================================
+* Privacy First: 
+  - Personal archives, emails, and phone logs of family members must remain fully protected.
+  - Support Native Biometric Verification (FaceID, TouchID, Android Biometrics) before 
+    allowing edits to the Live Digital Memorial Domain page.
+* Spam Vulnerabilities:
+  - Restrict RSVP registries with native rate limit thresholds and reCAPTCHA Enterprise on APIs.
+  - Secure API routes inside Express backends using rate-limit configurations and HTTPS token handshakes 
+    on all incoming mobile sessions.
+
+================================================================================
+7. PHASED IMPLEMENTATION ROADMAP
+================================================================================
+
+PHASE 1: Core Boilerplate & UI Porting (Weeks 1-4)
+* Initialize Expo Native app structure with TypeScript.
+* Re-implement the progressive questionnaire wizard using React Native Reanimated.
+* Build the clean navigational rails and tab layout for product types.
+
+PHASE 2: Collaborative Local Editing & Canvas Support (Weeks 5-8)
+* Program mobile touch controllers, gestures handler, and image upload.
+* Connect local SQLite persistence.
+* Port the obituary AI auto-generator with high quality stream interfaces.
+
+PHASE 3: Output rendering, Print & Share (Weeks 9-11)
+* Set up high-res PDF export with Expo-Print.
+* Link Stripe checkout, Apple Pay, and Google Pay SDK.
+* Complete RSVP share sheets & Web View digital memorial pages.
+
+PHASE 4: Testing & Store Submission (Weeks 12-14)
+* Stress test on over 45 physical devices (Android & iOS).
+* Optimize Core Web Vitals equivalent on mobile (FPS, Cold-start latency, bundle size).
+* Launch on Google Play Store and Apple App Store.
+================================================================================
+                       DOCUMENT ENDS SUCCESSFULLY
+================================================================================

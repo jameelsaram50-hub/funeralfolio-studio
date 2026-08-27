@@ -1,0 +1,7 @@
+{
+  "name": "node-domexception",
+  "version": "1.0.0",
+  "description": "Native DOMException shim for Node.js",
+  "main": "index.js",
+  "type": "commonjs"
+}

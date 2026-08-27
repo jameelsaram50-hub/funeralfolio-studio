@@ -1,0 +1,10 @@
+{
+  "name": "FuneralFolio",
+  "description": "Memorial document creation platform: coordinated creation of funeral programs (bi/tri-fold), prayer cards, invitations, thank you cards, digital memorials, obituary & eulogy writing, photo enhancement, and tribute video slideshows.",
+  "requestFramePermissions": [
+    "camera"
+  ],
+  "majorCapabilities": [
+    "MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"
+  ]
+}
