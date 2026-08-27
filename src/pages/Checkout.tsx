@@ -30,7 +30,18 @@ export default function Checkout() {
 
   const selectedTemplate = TEMPLATES.find(t => t.id === normalizeThemeId(memorialData.themeId)) || TEMPLATES[0];
 
-  const singlePrice = getPrice('single');
+  const formatStr = (memorialData.format || '').toLowerCase();
+  const formatKey = formatStr.includes('program') 
+    ? 'program' 
+    : formatStr.includes('poster') 
+      ? 'poster' 
+      : formatStr.includes('invitation') 
+        ? 'invitation' 
+        : formatStr.includes('thank') 
+          ? 'thank-you' 
+          : 'prayer';
+
+  const singlePrice = getPrice(formatKey);
   const bundlePrice = getPrice('bundle');
   const currentTotal = selectedPlan === 'single' ? singlePrice : bundlePrice;
 

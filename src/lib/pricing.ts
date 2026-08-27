@@ -50,14 +50,6 @@ export const DEFAULT_PRICES: Record<string, ProductPriceItem> = {
     price: 0, // Default $0
     unit: 'per template'
   },
-  'single': {
-    id: 'single',
-    name: 'Single Template PDF Download',
-    category: 'Checkout Plans',
-    description: 'Full high-resolution print-ready 300 DPI PDF download for one product.',
-    price: 0, // Default $0
-    unit: 'per single order'
-  },
   'bundle': {
     id: 'bundle',
     name: 'Complete Memorial Suite (All-in-One Bundle)',
