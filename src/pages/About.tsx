@@ -63,7 +63,7 @@ export default function About() {
   ];
 
   return (
-    <div className="bg-[#fdfaf7] min-h-screen pt-36 pb-32 font-sans selection:bg-[#967440]/20">
+    <div className="bg-[#fdfaf7] min-h-screen pt-36 pb-32 font-sans selection:bg-[#c5a059]/20">
       <Meta 
         title="About Our Memorial Document Platform"
         description="FuneralFolio empowers families to create beautiful, print-ready funeral programs, prayer cards, invitations, and digital memorials with dignity and ease."
@@ -80,11 +80,11 @@ export default function About() {
       <section className="bg-[#2c1810] text-[#f7f5f2] py-20 px-6 relative overflow-hidden">
         <div className="max-w-4xl mx-auto text-center space-y-6 relative z-10">
           <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-white/10 text-[#d2c2ad] text-xs font-bold uppercase tracking-wider border border-white/10">
-            <Sparkles size={14} className="text-[#967440]" />
+            <Sparkles size={14} className="text-[#c5a059]" />
             <span>Honoring Lives With Dignity</span>
           </div>
           <h1 className="text-4xl sm:text-6xl md:text-7xl font-serif font-medium tracking-tight text-white leading-[1.1]">
-            Honoring Life Stories With <span className="italic text-[#967440]">Dignity</span> & Ease
+            Honoring Life Stories With <span className="italic text-[#c5a059]">Dignity</span> & Ease
           </h1>
           <p className="text-base sm:text-xl text-[#d2c2ad]/80 max-w-2xl mx-auto leading-relaxed font-serif">
             We make creating funeral stationery simple and thoughtful, so families can focus on remembering and comforting each other.
@@ -96,7 +96,7 @@ export default function About() {
       <section className="max-w-7xl mx-auto px-6 py-24">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
           <div className="space-y-6">
-            <span className="text-xs font-bold uppercase tracking-wider text-[#967440]">Our Mission</span>
+            <span className="text-xs font-bold uppercase tracking-wider text-[#c5a059]">Our Mission</span>
             <h2 className="text-3xl sm:text-5xl font-serif font-bold text-[#2c1810] leading-tight">
               A Gentle Way to Create Memorial Keepsakes
             </h2>
@@ -109,15 +109,15 @@ export default function About() {
 
             <div className="grid grid-cols-2 sm:grid-cols-3 gap-6 pt-4 border-t border-gray-200">
               <div>
-                <span className="text-3xl font-serif font-bold text-[#967440]">40+</span>
+                <span className="text-3xl font-serif font-bold text-[#c5a059]">40+</span>
                 <p className="text-xs text-gray-500 font-medium">Curated Themes</p>
               </div>
               <div>
-                <span className="text-3xl font-serif font-bold text-[#967440]">5,000+</span>
+                <span className="text-3xl font-serif font-bold text-[#c5a059]">5,000+</span>
                 <p className="text-xs text-gray-500 font-medium">Families Supported</p>
               </div>
               <div>
-                <span className="text-3xl font-serif font-bold text-[#967440]">300 DPI</span>
+                <span className="text-3xl font-serif font-bold text-[#c5a059]">300 DPI</span>
                 <p className="text-xs text-gray-500 font-medium">Print Quality</p>
               </div>
             </div>
@@ -135,7 +135,7 @@ export default function About() {
             </div>
             <div className="absolute -bottom-8 -left-8 bg-white p-6 rounded-2xl shadow-xl border border-gray-100 max-w-xs hidden sm:block">
               <div className="flex items-center gap-3 mb-2">
-                <ShieldCheck size={20} className="text-[#967440]" />
+                <ShieldCheck size={20} className="text-[#c5a059]" />
                 <span className="font-bold text-xs text-[#2c1810]">High-Resolution Prints</span>
               </div>
               <p className="text-[11px] text-gray-500">Every design is formatted with crisp typography and artwork ready for home or local print shops.</p>
@@ -148,7 +148,7 @@ export default function About() {
       <section className="bg-white py-24 px-6 border-y border-gray-100">
         <div className="max-w-7xl mx-auto space-y-16">
           <div className="text-center space-y-4 max-w-2xl mx-auto">
-            <span className="text-xs font-bold uppercase tracking-wider text-[#967440]">Our Principles</span>
+            <span className="text-xs font-bold uppercase tracking-wider text-[#c5a059]">Our Principles</span>
             <h2 className="text-3xl sm:text-5xl font-serif font-bold text-[#2c1810]">Thoughtful Design for Families</h2>
             <p className="text-sm text-gray-600">
               Created to minimize stress, honor privacy, and deliver lasting keepsakes.
@@ -160,7 +160,7 @@ export default function About() {
               const Icon = pillar.icon;
               return (
                 <div key={idx} className="bg-[#fdfaf7] rounded-3xl p-8 border border-gray-100 shadow-sm hover:shadow-md transition-all space-y-4">
-                  <div className="w-12 h-12 rounded-2xl bg-[#967440]/10 text-[#967440] flex items-center justify-center">
+                  <div className="w-12 h-12 rounded-2xl bg-[#c5a059]/10 text-[#c5a059] flex items-center justify-center">
                     <Icon size={24} />
                   </div>
                   <h4 className="font-serif font-bold text-xl text-[#2c1810]">{pillar.title}</h4>
@@ -175,7 +175,7 @@ export default function About() {
       {/* Product Suite Showcase */}
       <section className="max-w-7xl mx-auto px-6 py-24 space-y-16">
         <div className="text-center space-y-4 max-w-2xl mx-auto">
-          <span className="text-xs font-bold uppercase tracking-wider text-[#967440]">Coordinated Suite</span>
+          <span className="text-xs font-bold uppercase tracking-wider text-[#c5a059]">Coordinated Suite</span>
           <h2 className="text-3xl sm:text-5xl font-serif font-bold text-[#2c1810]">Everything in One Place</h2>
           <p className="text-sm text-gray-600">
             Create complete memorial packages from a single dashboard.
@@ -193,9 +193,9 @@ export default function About() {
                 <img src={prod.image} alt={prod.title} loading="lazy" decoding="async" className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" />
               </div>
               <div className="p-6 space-y-2">
-                <h4 className="font-serif font-bold text-xl text-[#2c1810] group-hover:text-[#967440] transition-colors">{prod.title}</h4>
+                <h4 className="font-serif font-bold text-xl text-[#2c1810] group-hover:text-[#c5a059] transition-colors">{prod.title}</h4>
                 <p className="text-xs text-gray-600 leading-relaxed">{prod.desc}</p>
-                <div className="pt-3 flex items-center gap-2 text-xs font-bold uppercase tracking-wider text-[#967440]">
+                <div className="pt-3 flex items-center gap-2 text-xs font-bold uppercase tracking-wider text-[#c5a059]">
                   <span>Explore Designs</span>
                   <ArrowRight size={14} className="group-hover:translate-x-1 transition-transform" />
                 </div>
@@ -215,7 +215,7 @@ export default function About() {
           <div className="flex flex-wrap items-center justify-center gap-4 pt-2">
             <button
               onClick={() => navigate('/gallery')}
-              className="bg-[#967440] hover:bg-[#856535] text-white px-8 py-4 rounded-full text-xs font-bold uppercase tracking-wider shadow-lg transition-all"
+              className="bg-[#c5a059] hover:bg-[#856535] text-white px-8 py-4 rounded-full text-xs font-bold uppercase tracking-wider shadow-lg transition-all"
             >
               Browse 100+ Templates
             </button>

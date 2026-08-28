@@ -244,7 +244,7 @@ export default function ProductDetailPage({ productType }: ProductDetailPageProp
                   {config.orientation === 'landscape' ? (
                     <div className="relative z-10 w-full max-w-[420px] flex flex-col sm:flex-row items-center justify-between gap-3 sm:gap-4">
                       <div className="shrink-0">
-                        <div className="w-18 h-18 sm:w-28 sm:h-28 rounded-full overflow-hidden border-2 sm:border-3 border-[#8b6534] bg-[#f4ece4] shadow-md">
+                        <div className="w-18 h-18 sm:w-28 sm:h-28 rounded-full overflow-hidden border-2 sm:border-3 border-[#c5a059] bg-[#f4ece4] shadow-md">
                           <img 
                             src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?q=80&w=400&auto=format&fit=crop" 
                             alt="Memorial Portrait" 
@@ -272,7 +272,7 @@ export default function ProductDetailPage({ productType }: ProductDetailPageProp
                           Loved One
                         </h3>
                       </div>
-                      <div className="w-16 h-20 sm:w-20 sm:h-24 rounded-lg overflow-hidden border-2 border-[#8b6534]/40 bg-[#f4ece4] shadow-inner my-1 sm:my-2">
+                      <div className="w-16 h-20 sm:w-20 sm:h-24 rounded-lg overflow-hidden border-2 border-[#c5a059]/40 bg-[#f4ece4] shadow-inner my-1 sm:my-2">
                         <img 
                           src="https://images.unsplash.com/photo-1544005313-94ddf0286df2?q=80&w=200&auto=format&fit=crop" 
                           alt="" 
@@ -343,7 +343,7 @@ export default function ProductDetailPage({ productType }: ProductDetailPageProp
                 className={cn(
                   "p-1.5 rounded-2xl bg-white border transition-all text-center space-y-1 cursor-pointer",
                   activeTabView === 'front' 
-                    ? "border-[#8b6534] ring-2 ring-[#8b6534]/20 shadow-sm" 
+                    ? "border-[#c5a059] ring-2 ring-[#c5a059]/20 shadow-sm" 
                     : "border-gray-200 hover:border-gray-300 opacity-75 hover:opacity-100"
                 )}
               >
@@ -358,7 +358,7 @@ export default function ProductDetailPage({ productType }: ProductDetailPageProp
                 className={cn(
                   "p-1.5 rounded-2xl bg-white border transition-all text-center space-y-1 cursor-pointer",
                   activeTabView === 'website' 
-                    ? "border-[#8b6534] ring-2 ring-[#8b6534]/20 shadow-sm" 
+                    ? "border-[#c5a059] ring-2 ring-[#c5a059]/20 shadow-sm" 
                     : "border-gray-200 hover:border-gray-300 opacity-75 hover:opacity-100"
                 )}
               >
@@ -373,7 +373,7 @@ export default function ProductDetailPage({ productType }: ProductDetailPageProp
                 className={cn(
                   "p-1.5 rounded-2xl bg-white border transition-all text-center space-y-1 cursor-pointer",
                   activeTabView === 'package' 
-                    ? "border-[#8b6534] ring-2 ring-[#8b6534]/20 shadow-sm" 
+                    ? "border-[#c5a059] ring-2 ring-[#c5a059]/20 shadow-sm" 
                     : "border-gray-200 hover:border-gray-300 opacity-75 hover:opacity-100"
                 )}
               >
@@ -388,7 +388,7 @@ export default function ProductDetailPage({ productType }: ProductDetailPageProp
                 className={cn(
                   "p-1.5 rounded-2xl bg-white border transition-all text-center space-y-1 cursor-pointer",
                   activeTabView === 'print' 
-                    ? "border-[#8b6534] ring-2 ring-[#8b6534]/20 shadow-sm" 
+                    ? "border-[#c5a059] ring-2 ring-[#c5a059]/20 shadow-sm" 
                     : "border-gray-200 hover:border-gray-300 opacity-75 hover:opacity-100"
                 )}
               >
@@ -403,7 +403,7 @@ export default function ProductDetailPage({ productType }: ProductDetailPageProp
                 className={cn(
                   "p-1.5 rounded-2xl bg-white border transition-all text-center space-y-1 cursor-pointer",
                   activeTabView === 'quick' 
-                    ? "border-[#8b6534] ring-2 ring-[#8b6534]/20 shadow-sm" 
+                    ? "border-[#c5a059] ring-2 ring-[#c5a059]/20 shadow-sm" 
                     : "border-gray-200 hover:border-gray-300 opacity-75 hover:opacity-100"
                 )}
               >

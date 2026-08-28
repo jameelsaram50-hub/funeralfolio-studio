@@ -104,7 +104,7 @@ export default function FuneralInvitations() {
                   const el = document.getElementById('explore-themes-grid');
                   el?.scrollIntoView({ behavior: 'smooth' });
                 }}
-                className="bg-[#8b6534] hover:bg-[#785429] text-white font-bold text-sm py-4 px-8 rounded-full shadow-lg hover:shadow-xl transition-all cursor-pointer inline-flex items-center gap-2"
+                className="bg-[#c5a059] hover:bg-[#785429] text-white font-bold text-sm py-4 px-8 rounded-full shadow-lg hover:shadow-xl transition-all cursor-pointer inline-flex items-center gap-2"
               >
                 <span>Browse Invitations</span>
                 <ArrowRight size={16} />
@@ -146,7 +146,7 @@ export default function FuneralInvitations() {
                 viewport={{ once: true }}
                 transition={{ delay: (idx % 4) * 0.04 }}
                 onClick={() => navigate(`/funeral-invitations/${tmpl.id}`)}
-                className="group bg-white rounded-3xl p-3 border border-gray-200/80 hover:border-[#8b6534] shadow-xs hover:shadow-xl transition-all duration-300 cursor-pointer flex flex-col justify-between"
+                className="group bg-white rounded-3xl p-3 border border-gray-200/80 hover:border-[#c5a059] shadow-xs hover:shadow-xl transition-all duration-300 cursor-pointer flex flex-col justify-between"
               >
                 {/* 5x7 Invitation Card Mockup Canvas */}
                 <div className="relative aspect-[1/1.42] bg-[#fdfaf7] rounded-2xl overflow-hidden border border-gray-100 p-3.5 flex flex-col justify-between items-center text-center select-none">
@@ -175,7 +175,7 @@ export default function FuneralInvitations() {
                     </div>
 
                     {/* Circular / Framed Photo Box */}
-                    <div className="w-16 h-20 rounded-md overflow-hidden border border-[#8b6534]/40 bg-[#f4ece4] shadow-inner my-1">
+                    <div className="w-16 h-20 rounded-md overflow-hidden border border-[#c5a059]/40 bg-[#f4ece4] shadow-inner my-1">
                       <img 
                         src="https://images.unsplash.com/photo-1544005313-94ddf0286df2?q=80&w=200&auto=format&fit=crop" 
                         alt="" 
@@ -198,7 +198,7 @@ export default function FuneralInvitations() {
 
                   {/* Hover Customize Button Overlay */}
                   <div className="absolute inset-x-0 bottom-0 p-3 translate-y-3 opacity-0 group-hover:translate-y-0 group-hover:opacity-100 transition-all duration-200 z-20">
-                    <button className="w-full bg-[#8b6534] text-white py-2 rounded-xl font-bold text-[11px] uppercase tracking-wider shadow-md">
+                    <button className="w-full bg-[#c5a059] text-white py-2 rounded-xl font-bold text-[11px] uppercase tracking-wider shadow-md">
                       Customize Invitation
                     </button>
                   </div>
@@ -206,7 +206,7 @@ export default function FuneralInvitations() {
 
                 {/* Footer Label */}
                 <div className="px-2 pt-3 pb-1 flex items-center justify-between">
-                  <span className="font-serif font-bold text-sm text-[#2c1810] group-hover:text-[#8b6534] transition-colors truncate">
+                  <span className="font-serif font-bold text-sm text-[#2c1810] group-hover:text-[#c5a059] transition-colors truncate">
                     {tmpl.name}
                   </span>
                   <span className="text-[10px] uppercase font-bold text-gray-400">
@@ -230,7 +230,7 @@ export default function FuneralInvitations() {
             
             {/* Feature 1 */}
             <div className="text-center space-y-3 p-6 rounded-3xl bg-[#fcfaf8] border border-gray-100">
-              <div className="w-12 h-12 rounded-full bg-[#8b6534]/10 text-[#8b6534] flex items-center justify-center mx-auto">
+              <div className="w-12 h-12 rounded-full bg-[#c5a059]/10 text-[#c5a059] flex items-center justify-center mx-auto">
                 <Send size={22} />
               </div>
               <h3 className="font-serif font-bold text-lg text-[#2c1810]">
@@ -243,7 +243,7 @@ export default function FuneralInvitations() {
 
             {/* Feature 2 */}
             <div className="text-center space-y-3 p-6 rounded-3xl bg-[#fcfaf8] border border-gray-100">
-              <div className="w-12 h-12 rounded-full bg-[#8b6534]/10 text-[#8b6534] flex items-center justify-center mx-auto">
+              <div className="w-12 h-12 rounded-full bg-[#c5a059]/10 text-[#c5a059] flex items-center justify-center mx-auto">
                 <CalendarCheck size={22} />
               </div>
               <h3 className="font-serif font-bold text-lg text-[#2c1810]">
@@ -256,7 +256,7 @@ export default function FuneralInvitations() {
 
             {/* Feature 3 */}
             <div className="text-center space-y-3 p-6 rounded-3xl bg-[#fcfaf8] border border-gray-100">
-              <div className="w-12 h-12 rounded-full bg-[#8b6534]/10 text-[#8b6534] flex items-center justify-center mx-auto">
+              <div className="w-12 h-12 rounded-full bg-[#c5a059]/10 text-[#c5a059] flex items-center justify-center mx-auto">
                 <Compass size={22} />
               </div>
               <h3 className="font-serif font-bold text-lg text-[#2c1810]">
@@ -269,7 +269,7 @@ export default function FuneralInvitations() {
 
             {/* Feature 4 */}
             <div className="text-center space-y-3 p-6 rounded-3xl bg-[#fcfaf8] border border-gray-100">
-              <div className="w-12 h-12 rounded-full bg-[#8b6534]/10 text-[#8b6534] flex items-center justify-center mx-auto">
+              <div className="w-12 h-12 rounded-full bg-[#c5a059]/10 text-[#c5a059] flex items-center justify-center mx-auto">
                 <Printer size={22} />
               </div>
               <h3 className="font-serif font-bold text-lg text-[#2c1810]">
@@ -282,7 +282,7 @@ export default function FuneralInvitations() {
 
             {/* Feature 5 */}
             <div className="text-center space-y-3 p-6 rounded-3xl bg-[#fcfaf8] border border-gray-100">
-              <div className="w-12 h-12 rounded-full bg-[#8b6534]/10 text-[#8b6534] flex items-center justify-center mx-auto">
+              <div className="w-12 h-12 rounded-full bg-[#c5a059]/10 text-[#c5a059] flex items-center justify-center mx-auto">
                 <Sparkles size={22} />
               </div>
               <h3 className="font-serif font-bold text-lg text-[#2c1810]">
@@ -295,7 +295,7 @@ export default function FuneralInvitations() {
 
             {/* Feature 6 */}
             <div className="text-center space-y-3 p-6 rounded-3xl bg-[#fcfaf8] border border-gray-100">
-              <div className="w-12 h-12 rounded-full bg-[#8b6534]/10 text-[#8b6534] flex items-center justify-center mx-auto">
+              <div className="w-12 h-12 rounded-full bg-[#c5a059]/10 text-[#c5a059] flex items-center justify-center mx-auto">
                 <Heart size={22} />
               </div>
               <h3 className="font-serif font-bold text-lg text-[#2c1810]">
@@ -311,7 +311,7 @@ export default function FuneralInvitations() {
 
         {/* 4. TESTIMONIAL CARD (Exact Match for Screenshot) */}
         <div className="max-w-4xl mx-auto bg-[#fdfaf7] rounded-3xl p-8 sm:p-12 text-center border border-gray-200/60 shadow-xs space-y-6">
-          <div className="flex justify-center text-[#8b6534]">
+          <div className="flex justify-center text-[#c5a059]">
             {[0, 1, 2, 3, 4].map((i) => (
               <Star key={i} size={18} fill="currentColor" />
             ))}
@@ -338,7 +338,7 @@ export default function FuneralInvitations() {
               const el = document.getElementById('explore-themes-grid');
               el?.scrollIntoView({ behavior: 'smooth' });
             }}
-            className="bg-[#8b6534] hover:bg-[#785429] text-white font-bold text-sm py-4 px-9 rounded-full shadow-lg hover:shadow-xl transition-all cursor-pointer inline-flex items-center gap-2"
+            className="bg-[#c5a059] hover:bg-[#785429] text-white font-bold text-sm py-4 px-9 rounded-full shadow-lg hover:shadow-xl transition-all cursor-pointer inline-flex items-center gap-2"
           >
             <span>Start Creating An Invitation</span>
             <ArrowRight size={16} />
@@ -363,14 +363,14 @@ export default function FuneralInvitations() {
                 >
                   <button
                     onClick={() => toggleFaq(index)}
-                    className="w-full p-5 text-left flex items-center justify-between gap-4 font-serif font-bold text-sm sm:text-base text-[#2c1810] hover:text-[#8b6534] transition-colors cursor-pointer"
+                    className="w-full p-5 text-left flex items-center justify-between gap-4 font-serif font-bold text-sm sm:text-base text-[#2c1810] hover:text-[#c5a059] transition-colors cursor-pointer"
                   >
                     <span>{faq.question}</span>
                     <ChevronDown 
                       size={18} 
                       className={cn(
                         "shrink-0 text-gray-400 transition-transform duration-200",
-                        isOpen && "rotate-180 text-[#8b6534]"
+                        isOpen && "rotate-180 text-[#c5a059]"
                       )} 
                     />
                   </button>

@@ -149,7 +149,7 @@ export default function Gallery() {
   };
 
   return (
-    <div className="bg-[#fdfaf7] min-h-screen pb-32 font-sans selection:bg-[#967440]/20">
+    <div className="bg-[#fdfaf7] min-h-screen pb-32 font-sans selection:bg-[#c5a059]/20">
       <Meta 
         title="Memorial Themes Gallery & Template Catalog" 
         description="Browse our collection of 40+ print-ready funeral programs, prayer cards, invitations, thank you cards, and memorial posters."
@@ -173,7 +173,7 @@ export default function Gallery() {
           >
             <div className="max-w-7xl mx-auto px-6 py-3.5 flex items-center justify-between">
               <div className="flex items-center gap-3">
-                <div className="w-7 h-7 bg-[#967440] rounded-full flex items-center justify-center text-white shrink-0">
+                <div className="w-7 h-7 bg-[#c5a059] rounded-full flex items-center justify-center text-white shrink-0">
                   <Sparkles size={14} />
                 </div>
                 <p className="text-xs sm:text-sm font-serif">
@@ -194,14 +194,14 @@ export default function Gallery() {
       {/* Header & Product Switcher */}
       <header className="bg-white pt-36 pb-12 px-6 border-b border-gray-200/70">
         <div className="max-w-6xl mx-auto space-y-8 text-center">
-          <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-[#fdfaf7] border border-[#967440]/20 text-[#2c1810] text-xs font-semibold">
-            <Sparkles size={13} className="text-[#967440]" />
+          <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-[#fdfaf7] border border-[#c5a059]/20 text-[#2c1810] text-xs font-semibold">
+            <Sparkles size={13} className="text-[#c5a059]" />
             <span>Coordinated Memorial Document Collection</span>
           </div>
 
           <div className="space-y-3">
             <h1 className="text-4xl sm:text-5xl lg:text-6xl font-serif text-[#2c1810] font-medium tracking-tight">
-              Memorial <span className="text-[#967440] italic">Template Gallery</span>
+              Memorial <span className="text-[#c5a059] italic">Template Gallery</span>
             </h1>
             <p className="text-sm sm:text-base text-gray-600 max-w-2xl mx-auto font-sans leading-relaxed">
               Every design is available across all stationery formats. Select a product format and style category below to preview your exact layout.
@@ -211,7 +211,7 @@ export default function Gallery() {
           {/* Product Type Tabs */}
           <div className="pt-2">
             <div className="text-[11px] font-bold uppercase tracking-wider text-gray-400 mb-3 flex items-center justify-center gap-1.5">
-              <Layers size={13} className="text-[#967440]" />
+              <Layers size={13} className="text-[#c5a059]" />
               <span>Select Stationery Format</span>
             </div>
             <div className="flex flex-wrap justify-center gap-2 max-w-3xl mx-auto">
@@ -227,11 +227,11 @@ export default function Gallery() {
                       "px-5 py-3 rounded-xl border text-xs font-bold uppercase tracking-wider transition-all cursor-pointer flex items-center gap-2",
                       isActive 
                         ? "bg-[#2c1810] text-[#d2c2ad] border-[#2c1810] shadow-md scale-[1.02]" 
-                        : "bg-[#fdfaf7] text-[#2c1810]/70 border-gray-200 hover:border-[#967440]/50 hover:bg-white"
+                        : "bg-[#fdfaf7] text-[#2c1810]/70 border-gray-200 hover:border-[#c5a059]/50 hover:bg-white"
                     )}
                   >
                     <span>{config.label}</span>
-                    {isActive && <span className="w-1.5 h-1.5 rounded-full bg-[#967440]" />}
+                    {isActive && <span className="w-1.5 h-1.5 rounded-full bg-[#c5a059]" />}
                   </button>
                 );
               })}
@@ -243,11 +243,11 @@ export default function Gallery() {
             key={productType}
             initial={{ opacity: 0, y: 4 }}
             animate={{ opacity: 1, y: 0 }}
-            className="bg-[#fdfaf7] border border-[#967440]/20 rounded-2xl p-4 max-w-2xl mx-auto flex flex-col sm:flex-row items-center justify-between gap-3 text-left"
+            className="bg-[#fdfaf7] border border-[#c5a059]/20 rounded-2xl p-4 max-w-2xl mx-auto flex flex-col sm:flex-row items-center justify-between gap-3 text-left"
           >
             <div>
               <div className="flex items-center gap-2">
-                <span className="text-xs font-bold uppercase tracking-wider text-[#967440]">{currentConfig.tagline}</span>
+                <span className="text-xs font-bold uppercase tracking-wider text-[#c5a059]">{currentConfig.tagline}</span>
                 <span className="text-[10px] bg-white px-2 py-0.5 rounded border border-gray-200 font-semibold text-gray-500">{currentConfig.badge}</span>
               </div>
               <p className="text-xs text-gray-600 mt-1">{currentConfig.description}</p>
@@ -280,7 +280,7 @@ export default function Gallery() {
                   className={cn(
                     "px-3.5 py-1.5 rounded-full text-xs font-medium transition-all shrink-0 cursor-pointer flex items-center gap-1.5",
                     isActive
-                      ? "bg-[#967440] text-white shadow-xs"
+                      ? "bg-[#c5a059] text-white shadow-xs"
                       : "bg-[#fdfaf7] text-gray-600 hover:text-[#2c1810] border border-gray-200 hover:border-gray-300"
                   )}
                 >
@@ -305,7 +305,7 @@ export default function Gallery() {
               value={search}
               onChange={(e) => setSearch(e.target.value)}
               placeholder="Search by theme name or keyword..."
-              className="w-full pl-9 pr-8 py-2 bg-[#fdfaf7] border border-gray-200 rounded-xl text-xs outline-none focus:border-[#967440] focus:bg-white transition-all font-sans"
+              className="w-full pl-9 pr-8 py-2 bg-[#fdfaf7] border border-gray-200 rounded-xl text-xs outline-none focus:border-[#c5a059] focus:bg-white transition-all font-sans"
             />
             {search && (
               <button 
@@ -325,7 +325,7 @@ export default function Gallery() {
           <p className="text-xs font-medium text-gray-500">
             Showing <strong className="text-[#2c1810]">{filteredTemplates.length}</strong> {filter !== 'All' ? `${filter} ` : ''}{currentConfig.label.toLowerCase()} templates
           </p>
-          <div className="flex items-center gap-2 text-xs text-[#967440] font-semibold">
+          <div className="flex items-center gap-2 text-xs text-[#c5a059] font-semibold">
             <span>Click any design to open the editor</span>
           </div>
         </div>
@@ -339,7 +339,7 @@ export default function Gallery() {
                 initial={{ opacity: 0, y: 12 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.25, delay: (idx % 8) * 0.03 }}
-                className="group bg-white rounded-2xl border border-gray-200/80 hover:border-[#967440]/60 hover:shadow-xl transition-all duration-300 flex flex-col justify-between overflow-hidden"
+                className="group bg-white rounded-2xl border border-gray-200/80 hover:border-[#c5a059]/60 hover:shadow-xl transition-all duration-300 flex flex-col justify-between overflow-hidden"
               >
                 {/* Product-Specific Visual Card Preview */}
                 <div 
@@ -391,7 +391,7 @@ export default function Gallery() {
                     {productType === 'invitation' && (
                       <div className="absolute inset-0 bg-gradient-to-b from-white/95 via-white/80 to-[#2c1810]/80 flex flex-col justify-between p-3 text-center">
                         <div className="pt-1">
-                          <p className="text-[8px] uppercase tracking-widest font-bold text-[#967440]">Funeral Announcement</p>
+                          <p className="text-[8px] uppercase tracking-widest font-bold text-[#c5a059]">Funeral Announcement</p>
                           <h4 className="font-serif text-[11px] font-bold text-[#2c1810] mt-0.5 leading-tight">
                             Celebration of Life
                           </h4>
@@ -412,7 +412,7 @@ export default function Gallery() {
                     {productType === 'thank-you' && (
                       <div className="absolute inset-0 bg-white/85 flex flex-col justify-between p-3.5 text-center border-4 border-white/50">
                         <div className="pt-1">
-                          <span className="text-[8px] font-bold uppercase tracking-widest text-[#967440]">Acknowledgment</span>
+                          <span className="text-[8px] font-bold uppercase tracking-widest text-[#c5a059]">Acknowledgment</span>
                           <h4 className="font-serif text-xs font-bold text-[#2c1810] mt-1">With Sincere Gratitude</h4>
                         </div>
 
@@ -447,7 +447,7 @@ export default function Gallery() {
                 <div className="p-4 space-y-3">
                   <div className="flex items-start justify-between gap-2">
                     <div>
-                      <h3 className="font-serif font-bold text-base text-[#2c1810] group-hover:text-[#967440] transition-colors leading-tight">
+                      <h3 className="font-serif font-bold text-base text-[#2c1810] group-hover:text-[#c5a059] transition-colors leading-tight">
                         {template.name}
                       </h3>
                       <p className="text-[11px] font-medium text-gray-400 mt-0.5">
@@ -505,7 +505,7 @@ export default function Gallery() {
             >
               <div className="flex items-center justify-between border-b border-gray-100 pb-4">
                 <div>
-                  <span className="text-[10px] font-bold uppercase tracking-wider text-[#967440]">{previewTemplate.category} Theme</span>
+                  <span className="text-[10px] font-bold uppercase tracking-wider text-[#c5a059]">{previewTemplate.category} Theme</span>
                   <h3 className="text-2xl font-serif font-bold text-[#2c1810]">{previewTemplate.name}</h3>
                 </div>
                 <button
@@ -544,13 +544,13 @@ export default function Gallery() {
                               setProductType(typeKey);
                               handleSelectTemplate(previewTemplate);
                             }}
-                            className="w-full p-3 rounded-xl border border-gray-200 hover:border-[#967440] hover:bg-[#fdfaf7] transition-all flex items-center justify-between text-left group cursor-pointer"
+                            className="w-full p-3 rounded-xl border border-gray-200 hover:border-[#c5a059] hover:bg-[#fdfaf7] transition-all flex items-center justify-between text-left group cursor-pointer"
                           >
                             <div>
-                              <p className="text-xs font-bold text-[#2c1810] group-hover:text-[#967440]">{cfg.label}</p>
+                              <p className="text-xs font-bold text-[#2c1810] group-hover:text-[#c5a059]">{cfg.label}</p>
                               <p className="text-[10px] text-gray-500">{cfg.badge}</p>
                             </div>
-                            <ChevronRight size={14} className="text-gray-400 group-hover:translate-x-1 group-hover:text-[#967440] transition-all" />
+                            <ChevronRight size={14} className="text-gray-400 group-hover:translate-x-1 group-hover:text-[#c5a059] transition-all" />
                           </button>
                         );
                       })}
@@ -566,8 +566,8 @@ export default function Gallery() {
       {/* AI Obituary Callout */}
       <section className="max-w-5xl mx-auto px-6 mt-20">
         <div className="bg-[#2c1810] text-[#f7f5f2] rounded-3xl p-8 sm:p-12 text-center space-y-6 shadow-xl">
-          <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-[#967440]/20 text-[#d2c2ad] text-xs font-bold">
-            <Sparkles size={13} className="text-[#967440]" />
+          <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-[#c5a059]/20 text-[#d2c2ad] text-xs font-bold">
+            <Sparkles size={13} className="text-[#c5a059]" />
             <span>AI Writing Suite</span>
           </div>
           <h2 className="text-2xl sm:text-4xl font-serif font-medium text-white max-w-xl mx-auto">
