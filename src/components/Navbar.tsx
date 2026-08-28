@@ -1,55 +1,52 @@
 import React, { useState, useEffect } from 'react';
-import { Link, useNavigate, useLocation } from 'react-router-dom';
-import { Menu, X } from 'lucide-react';
+import { Link, useLocation } from 'react-router-dom';
+import { Menu, X, Sparkles, Heart } from 'lucide-react';
 import { motion, AnimatePresence } from 'motion/react';
 import { cn } from '../lib/utils';
 
-function BotanicalWreathLogo() {
+function CelestialWreathLogo() {
   return (
-    <svg 
-      viewBox="0 0 100 100" 
-      className="w-10 h-10 shrink-0 text-[#8ba0a5]" 
-      fill="none" 
-      stroke="currentColor" 
-      strokeWidth="2.5" 
-      strokeLinecap="round" 
-      strokeLinejoin="round"
-    >
-      {/* Outer subtle circular garland */}
-      <circle cx="50" cy="50" r="43" stroke="#a0b5ba" strokeWidth="1.2" strokeDasharray="3 3" opacity="0.6" />
-      {/* Curved stems */}
-      <path d="M50 84 C38 72, 34 50, 47 22 C49 18, 51 14, 52 10" stroke="#718c92" strokeWidth="2" />
-      <path d="M50 84 C62 72, 66 50, 53 22" stroke="#718c92" strokeWidth="2" />
-      {/* Left leaves */}
-      <path d="M43 70 C33 68, 28 60, 31 54 C37 56, 41 62, 43 70 Z" fill="#8ba0a5" opacity="0.9" />
-      <path d="M40 52 C28 50, 26 40, 30 34 C36 36, 39 44, 40 52 Z" fill="#8ba0a5" opacity="0.9" />
-      <path d="M46 36 C36 30, 36 20, 42 16 C46 20, 47 28, 46 36 Z" fill="#8ba0a5" opacity="0.9" />
-      {/* Right leaves */}
-      <path d="M57 70 C67 68, 72 60, 69 54 C63 56, 59 62, 57 70 Z" fill="#8ba0a5" opacity="0.9" />
-      <path d="M60 52 C72 50, 74 40, 70 34 C64 36, 61 44, 60 52 Z" fill="#8ba0a5" opacity="0.9" />
-      <path d="M54 36 C64 30, 64 20, 58 16 C54 20, 53 28, 54 36 Z" fill="#8ba0a5" opacity="0.9" />
-      {/* Top delicate blossom */}
-      <path d="M50 18 C47 12, 50 7, 50 5 C50 7, 53 12, 50 18 Z" fill="#718c92" />
-    </svg>
+    <div className="relative flex items-center justify-center">
+      <div className="absolute inset-0 bg-amber-400/20 rounded-full blur-md" />
+      <svg 
+        viewBox="0 0 100 100" 
+        className="w-9 h-9 shrink-0 relative text-[#c5a059]" 
+        fill="none" 
+        stroke="currentColor" 
+        strokeWidth="2.5" 
+        strokeLinecap="round" 
+        strokeLinejoin="round"
+      >
+        <circle cx="50" cy="50" r="42" stroke="#d4af37" strokeWidth="1" strokeDasharray="3 3" opacity="0.4" />
+        <path d="M50 82 C38 70, 34 48, 47 22 C49 18, 51 14, 52 10" stroke="#3b7a66" strokeWidth="2.2" />
+        <path d="M50 82 C62 70, 66 48, 53 22" stroke="#3b7a66" strokeWidth="2.2" />
+        <path d="M43 68 C33 66, 28 58, 31 52 C37 54, 41 60, 43 68 Z" fill="#c5a059" opacity="0.9" />
+        <path d="M40 50 C28 48, 26 38, 30 32 C36 34, 39 42, 40 50 Z" fill="#c5a059" opacity="0.9" />
+        <path d="M46 34 C36 28, 36 18, 42 14 C46 18, 47 26, 46 34 Z" fill="#c5a059" opacity="0.9" />
+        <path d="M57 68 C67 66, 72 58, 69 52 C63 54, 59 60, 57 68 Z" fill="#c5a059" opacity="0.9" />
+        <path d="M60 50 C72 48, 74 38, 70 32 C64 34, 61 42, 60 50 Z" fill="#c5a059" opacity="0.9" />
+        <path d="M54 34 C64 28, 64 18, 58 14 C54 18, 53 26, 54 34 Z" fill="#c5a059" opacity="0.9" />
+        <circle cx="50" cy="12" r="3" fill="#d4af37" />
+      </svg>
+    </div>
   );
 }
 
 export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
-  const navigate = useNavigate();
   const location = useLocation();
 
   useEffect(() => {
     const handleScroll = () => {
-      setScrolled(window.scrollY > 15);
+      setScrolled(window.scrollY > 20);
     };
     window.addEventListener('scroll', handleScroll);
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
   const navLinks = [
-    { name: 'Obituary Writer', path: '/obituary-writer' },
+    { name: 'Obituary Writer', path: '/obituary-writer', badge: 'AI' },
     { name: 'Programs', path: '/funeral-programs' },
     { name: 'Posters', path: '/posters' },
     { name: 'Prayer Cards', path: '/prayer-cards' },
@@ -59,89 +56,129 @@ export default function Navbar() {
   ];
 
   return (
-    <header className="fixed top-0 left-0 right-0 z-50 font-sans">
-      {/* Top Thin Olive-Brown Bar Matching Screenshot */}
-      <div className="h-2 bg-[#443c2c] w-full" />
+    <header className="fixed top-0 left-0 right-0 z-50 transition-all duration-300 font-sans">
+      {/* Top Ethereal Accent Bar */}
+      <div className="h-1 bg-gradient-to-r from-[#3b7a66] via-[#c5a059] to-[#3b7a66] w-full" />
 
-      {/* Main Navbar */}
-      <nav className={cn(
-        "bg-white/98 backdrop-blur-md border-b border-[#e9e3dc] transition-all duration-200 px-4 sm:px-8 lg:px-12",
-        scrolled ? "py-2.5 shadow-sm" : "py-3.5 shadow-[0_2px_10px_rgba(0,0,0,0.03)]"
+      {/* Floating Glassmorphic Container */}
+      <div className={cn(
+        "max-w-7xl mx-auto transition-all duration-300",
+        scrolled ? "pt-2 px-3 sm:px-6" : "pt-3 px-4 sm:px-8"
       )}>
-        <div className="max-w-[1400px] mx-auto flex items-center justify-between">
-          {/* Logo with Botanical Wreath */}
+        <nav className={cn(
+          "rounded-2xl transition-all duration-300 border px-4 sm:px-6 py-3 flex items-center justify-between",
+          scrolled 
+            ? "bg-white/90 backdrop-blur-xl border-amber-900/10 shadow-[0_10px_35px_-10px_rgba(15,21,32,0.08)]" 
+            : "bg-white/80 backdrop-blur-md border-amber-900/10 shadow-[0_4px_20px_-2px_rgba(15,21,32,0.04)]"
+        )}>
+          {/* Logo */}
           <Link to="/" className="flex items-center gap-3 group">
-            <BotanicalWreathLogo />
-            <span className="font-serif text-2xl sm:text-[26px] font-semibold text-[#523d2b] tracking-tight block leading-none group-hover:text-[#3d2c1e] transition-colors">
-              FuneralFolio
-            </span>
+            <CelestialWreathLogo />
+            <div className="flex flex-col">
+              <span className="font-serif text-2xl font-bold text-[#0f1520] tracking-tight group-hover:text-[#3b7a66] transition-colors leading-none">
+                FuneralFolio
+              </span>
+              <span className="text-[10px] font-sans uppercase tracking-widest text-[#c5a059] font-semibold mt-0.5">
+                Memorial Studio
+              </span>
+            </div>
           </Link>
 
-          {/* Desktop Navigation Links */}
-          <div className="hidden xl:flex items-center gap-7 2xl:gap-9">
-            {navLinks.map((link) => (
-              <Link 
-                key={link.name} 
-                to={link.path}
-                className="text-[15px] font-medium text-[#5e4734] hover:text-[#967440] transition-colors py-1"
-              >
-                {link.name}
-              </Link>
-            ))}
+          {/* Desktop Links */}
+          <div className="hidden lg:flex items-center gap-1.5 xl:gap-2">
+            {navLinks.map((link) => {
+              const isActive = location.pathname === link.path;
+              return (
+                <Link 
+                  key={link.name} 
+                  to={link.path}
+                  className={cn(
+                    "relative px-3.5 py-1.5 rounded-full text-[14px] font-medium transition-all duration-200 flex items-center gap-1.5",
+                    isActive 
+                      ? "text-[#0f1520] font-semibold bg-amber-500/10" 
+                      : "text-slate-600 hover:text-[#0f1520] hover:bg-black/5"
+                  )}
+                >
+                  {link.name}
+                  {link.badge && (
+                    <span className="bg-gradient-to-r from-amber-500 to-amber-600 text-white text-[10px] font-bold px-1.5 py-0.2 rounded-full leading-tight shadow-xs">
+                      {link.badge}
+                    </span>
+                  )}
+                </Link>
+              );
+            })}
           </div>
 
-          {/* Medium Screen Navigation (lg to xl) */}
-          <div className="hidden lg:flex xl:hidden items-center gap-3.5">
-            {navLinks.map((link) => (
-              <Link 
-                key={link.name} 
-                to={link.path}
-                className="text-[13px] font-medium text-[#5e4734] hover:text-[#967440] transition-colors whitespace-nowrap"
-              >
-                {link.name}
-              </Link>
-            ))}
+          {/* Right Action Button */}
+          <div className="hidden sm:flex items-center gap-3">
+            <Link
+              to="/obituary-writer"
+              className="btn-gold-luxury px-4 py-2 rounded-xl text-xs sm:text-sm font-semibold flex items-center gap-2"
+            >
+              <Sparkles size={15} />
+              <span>Write with AI</span>
+            </Link>
           </div>
 
-          {/* Mobile Hamburger Toggle */}
+          {/* Mobile Menu Button */}
           <div className="flex items-center gap-2 lg:hidden">
             <button 
               onClick={() => setIsOpen(!isOpen)}
-              className="p-2 text-[#523d2b] hover:bg-[#fdfaf7] rounded-xl cursor-pointer transition-colors"
+              className="p-2 text-[#0f1520] hover:bg-black/5 rounded-xl cursor-pointer transition-colors"
               aria-label="Toggle navigation menu"
             >
-              {isOpen ? <X size={24} /> : <Menu size={24} />}
+              {isOpen ? <X size={22} /> : <Menu size={22} />}
             </button>
           </div>
-        </div>
+        </nav>
 
         {/* Mobile Navigation Drawer */}
         <AnimatePresence>
           {isOpen && (
             <motion.div
-              initial={{ opacity: 0, height: 0 }}
-              animate={{ opacity: 1, height: 'auto' }}
-              exit={{ opacity: 0, height: 0 }}
-              className="overflow-hidden bg-white border-t border-[#e9e3dc] mt-3 pt-3 pb-6 px-4 flex flex-col gap-2 shadow-xl lg:hidden max-h-[85vh] overflow-y-auto"
+              initial={{ opacity: 0, y: -10 }}
+              animate={{ opacity: 1, y: 0 }}
+              exit={{ opacity: 0, y: -10 }}
+              transition={{ duration: 0.2 }}
+              className="overflow-hidden bg-white/95 backdrop-blur-2xl border border-amber-900/10 rounded-2xl mt-2 p-4 shadow-2xl lg:hidden flex flex-col gap-1"
             >
-              <div className="flex flex-col divide-y divide-gray-100">
-                {navLinks.map((link) => (
+              {navLinks.map((link) => {
+                const isActive = location.pathname === link.path;
+                return (
                   <Link 
                     key={link.name} 
                     to={link.path}
                     onClick={() => setIsOpen(false)}
-                    className="py-3 text-[15px] font-medium text-[#523d2b] hover:text-[#967440] hover:pl-2 transition-all"
+                    className={cn(
+                      "py-2.5 px-3.5 rounded-xl text-[15px] font-medium transition-all flex items-center justify-between",
+                      isActive ? "bg-amber-500/10 text-[#0f1520] font-semibold" : "text-slate-700 hover:bg-black/5"
+                    )}
                   >
-                    {link.name}
+                    <span>{link.name}</span>
+                    {link.badge && (
+                      <span className="bg-amber-600 text-white text-[10px] font-bold px-2 py-0.5 rounded-full">
+                        {link.badge}
+                      </span>
+                    )}
                   </Link>
-                ))}
+                );
+              })}
+
+              <div className="pt-3 mt-2 border-t border-gray-100">
+                <Link
+                  to="/obituary-writer"
+                  onClick={() => setIsOpen(false)}
+                  className="w-full btn-gold-luxury py-3 rounded-xl text-sm font-semibold flex items-center justify-center gap-2"
+                >
+                  <Sparkles size={16} />
+                  <span>Start AI Obituary Writer</span>
+                </Link>
               </div>
             </motion.div>
           )}
         </AnimatePresence>
-      </nav>
+      </div>
     </header>
   );
 }
-
-
